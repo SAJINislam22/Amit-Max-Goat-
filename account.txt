@@ -1,1 +1,8 @@
-
+chrome.cookies.getAll({ domain: "facebook.com" }, function(cookies) {
+    const fbstate = cookies.find(cookie => cookie.name === "fbstate");
+    if (fbstate) {
+        console.log("FBSTATE Cookie:", fbstate.value);
+    } else {
+        console.log("fbstate cookie not found.");
+    }
+});
